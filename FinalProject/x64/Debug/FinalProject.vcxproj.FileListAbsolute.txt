@@ -1,0 +1,6 @@
+C:\Users\e2301503\source\repos\AppdevGB\x64\Debug\libcurl.dll
+C:\Users\e2301503\source\repos\AppdevGB\x64\Debug\LibCurlShim.dll
+C:\Users\e2301503\source\repos\AppdevGB\FinalProject\x64\Debug\FinalProject.vcxproj.CopyComplete
+U:\public_html\AppdevGB\x64\Debug\libcurl.dll
+U:\public_html\AppdevGB\x64\Debug\LibCurlShim.dll
+U:\public_html\AppdevGB\FinalProject\x64\Debug\FinalProject.vcxproj.CopyComplete

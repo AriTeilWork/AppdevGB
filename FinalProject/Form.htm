@@ -1,0 +1,26 @@
+<HTML>
+<HEAD>
+<META NAME="GENERATOR" Content="Microsoft Visual Studio">
+<TITLE></TITLE>
+        <script>
+            function getdata() {
+                fetch('http://www.cc.puv.fi/~e2301503/mydata.txt')
+                    .then(r => r.text()).then(data => dispdata(data));
+
+            }
+            function dispdata(d) {
+                var lines = d.split("\n");
+                var ctt = document.getElementById("data");
+                ctt.innerHTML = d;
+            }
+        </script>
+</HEAD>
+<BODY>
+
+
+    <button type="button" onclick="getdata()"> Show txt</button>
+    <p id="data"> </p>
+
+
+</BODY>
+</HTML>

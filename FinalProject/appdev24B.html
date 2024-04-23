@@ -1,0 +1,51 @@
+<<!doctype html> 
+<html> 
+<head> 
+    <title>APPDEV Final</title> 
+    <script> 
+        function loadtxt() { 
+            fetch('http://www.cc.puv.fi/~e2301503/echo.php') 
+                .then(r => r.text()).then(data => dispdata(data)); 
+        } 
+        function dispdata(d) { 
+            var ctt = document.getElementById("data"); 
+            var can = document.getElementById("chart"); 
+            var ctx = can.getContext("2d"); 
+            ctx.lineWidth = 10; 
+            //ctt.innerHTML = d; 
+            var lines = d.split("\n"); // make an array of lines 
+            var i = 0; 
+            ctx.font = "50px Arial"; 
+            ctx.fillStyle = "pink" 
+            ctx.fillText("My barchart", can.width / 2 -125, 10+50); 
+            while (typeof lines[0] !== 'undefined') { 
+                var curline = lines.shift(); 
+                //ctt.innerHTML += curline + "<br/>"; 
+                splitted = curline.split(' '); 
+                var max = parseInt(splitted[2]), min = parseInt(splitted[3]); 
+                if (max < min) { 
+                    var temp = min; 
+                    min = max; 
+                    max = temp; 
+                     
+                } 
+                ctx.strokeStyle = '#FF0000'; 
+                ctx.beginPath(); 
+                ctx.moveTo(i * 30 + 10, h/2); 
+                ctx.lineTo(i * 30 + 10, min * 5 + h/2); 
+                ctx.stroke(); 
+                ctx.strokeStyle = '#00FF00'; 
+                ctx.beginPath(); 
+                ctx.moveTo(i * 30 + 20, h/2); 
+                ctx.lineTo(i * 30 + 20, max * 5 + h/2); 
+                ctx.stroke(); 
+                i = i + 1; 
+             } 
+        } 
+    </script> 
+</head> 
+<body onload="loadtxt();"> 
+    <p id="data"></p> 
+    <canvas id="chart" height="400" width="1000" style="border:solid 2px blue"></canvas> 
+</body> 
+</html>
