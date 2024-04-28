@@ -1,3 +1,4 @@
+#include "screen.h"
 #include <stdio.h>
 
 void setFGcolor(int color) {
